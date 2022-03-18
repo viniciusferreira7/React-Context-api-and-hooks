@@ -3,9 +3,15 @@ import './App.css';
 
 function App() {
   //eslint-disable-next-line
-  const [state, dispatch] = useCounterContext();
+  const [state, actions] = useCounterContext();
+  console.log(state);
 
-  return <div className="App">oi</div>;
+  return (
+    <>
+      <div className="App">oi</div>
+      <button onClick={() => actions.increase()}>Click</button>
+    </>
+  );
 }
 
 export default App;

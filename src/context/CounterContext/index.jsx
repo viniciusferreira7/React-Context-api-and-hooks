@@ -1,5 +1,5 @@
 import P from 'prop-types';
-import { createContext, useContext, useReducer } from 'react';
+import { createContext, useContext, useReducer, useRef } from 'react';
 import { buildAction } from './build-actions';
 import { reducer } from './reducer';
 
@@ -12,8 +12,8 @@ export const initialState = {
 
 export const CounterContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const action = buildAction(dispatch);
-  return <Context.Provider value={[state, action]}>{children}</Context.Provider>;
+  const action = useRef(buildAction(dispatch));
+  return <Context.Provider value={[state, action.current]}>{children}</Context.Provider>;
 };
 
 CounterContextProvider.propTypes = {

@@ -1,3 +1,5 @@
+import { Button } from '../../components/Button';
+import { Heading } from '../../components/Heading';
 import { useCounterContext } from '../../context/CounterContext';
 import './App.css';
 
@@ -8,11 +10,10 @@ function App() {
 
   return (
     <>
-      <div className="App">oi</div>
-      <button onClick={() => actions.increase()}>Click</button>
+      <Heading />
+      <Button onButtonClick={actions.increase} text={'Increase'} />
     </>
   );
 }
 
 export default App;
-// fazer o adventures hoje

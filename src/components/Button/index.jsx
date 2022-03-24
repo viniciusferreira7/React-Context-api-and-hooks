@@ -2,9 +2,9 @@ import P from 'prop-types';
 
 import React from 'react';
 
-export const Button = ({ text, onButtonClick }) => {
+export const Button = ({ text, onButtonClick, disabled }) => {
   return (
-    <button style={{ fontSize: '35px' }} onClick={onButtonClick}>
+    <button disable={disabled} style={{ fontSize: '35px' }} onClick={onButtonClick}>
       {' '}
       {text}
     </button>
@@ -14,4 +14,5 @@ export const Button = ({ text, onButtonClick }) => {
 Button.propTypes = {
   text: P.string.isRequired,
   onButtonClick: P.func.isRequired,
+  disabled: P.bool,
 };

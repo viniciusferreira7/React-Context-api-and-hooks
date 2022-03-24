@@ -8,6 +8,7 @@ const Context = createContext();
 export const initialState = {
   counter: 0,
   loading: false,
+  error: false,
 };
 
 export const CounterContextProvider = ({ children }) => {
